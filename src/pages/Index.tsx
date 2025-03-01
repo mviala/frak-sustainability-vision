@@ -151,21 +151,21 @@ const Index = () => {
             <MetricCard 
               icon={<BarChart className="h-5 w-5" />}
               title="Transactions Processed"
-              value={<AnimatedCount end={1000000} suffix="+" className="text-3xl font-semibold" />}
+              value="1000000+"
               description="Growing from ~40k to ~220k monthly"
               delay={100}
             />
             <MetricCard 
               icon={<Zap className="h-5 w-5" />}
               title="Energy Per Transaction"
-              value={<AnimatedCount end={0.0058} decimals={4} suffix=" Wh" className="text-3xl font-semibold" />}
+              value="0.0058 Wh"
               description="3,448x more efficient than PoS"
               delay={250}
             />
             <MetricCard 
               icon={<RefreshCw className="h-5 w-5" />}
               title="Total Energy Saved"
-              value={<AnimatedCount end={26} suffix=" GWh/year" className="text-3xl font-semibold" />}
+              value="26 GWh/year"
               description="Powers thousands of homes"
               delay={400}
             />
