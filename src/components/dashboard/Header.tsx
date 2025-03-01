@@ -10,8 +10,8 @@ interface HeaderProps {
 const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 py-3 px-6">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-2">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div className="flex items-center space-x-2 mb-3 md:mb-0">
           <img src="/frak-logo.png" alt="Frak Logo" className="h-10" />
           <span className="text-xl font-medium text-gray-800">Impact Dashboard</span>
         </div>
@@ -26,7 +26,7 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
           >
             <div className="flex items-center">
               <Leaf className="w-4 h-4 mr-2" />
-              Environmental
+              Carbon Footprint
             </div>
           </button>
           <button
@@ -39,9 +39,12 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
           >
             <div className="flex items-center">
               <Users className="w-4 h-4 mr-2" />
-              Social
+              Customers Giveback
             </div>
           </button>
+        </div>
+        <div className="hidden md:block w-40">
+          {/* This empty div helps center the tabs on larger screens */}
         </div>
       </div>
     </header>
