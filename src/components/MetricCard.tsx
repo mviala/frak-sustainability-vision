@@ -48,21 +48,20 @@ const MetricCard = ({
     <div 
       ref={cardRef}
       className={cn(
-        "metric-card transform transition-all duration-500",
+        "rounded-xl p-5 transform transition-all duration-500 relative overflow-hidden",
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
         className
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="absolute top-4 right-4 text-frak-deep-green">{icon}</div>
-      <h3 className="text-sm font-medium text-frak-neutral-dark mb-2">{title}</h3>
+      <div className="absolute top-4 right-4 text-[#9b87f5]/70">{icon}</div>
+      <h3 className="text-sm font-medium text-gray-500 mb-1">{title}</h3>
       <div className="flex items-baseline space-x-1">
-        <p className="text-3xl font-semibold text-frak-dark animated-number">
+        <p className="text-2xl font-semibold text-gray-800 animated-number">
           {isVisible ? value : "0"}
         </p>
       </div>
-      <p className="mt-2 text-sm text-frak-neutral-dark">{description}</p>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-frak-green to-frak-blue opacity-30"></div>
+      <p className="mt-2 text-xs text-gray-500">{description}</p>
     </div>
   );
 };

@@ -8,7 +8,7 @@ interface DataPoint {
   value: number;
 }
 
-interface ProgressChartProps {
+interface SocialImpactChartProps {
   data: DataPoint[];
   title: string;
   description: string;
@@ -16,7 +16,7 @@ interface ProgressChartProps {
   className?: string;
 }
 
-const ProgressChart = ({ data, title, description, color, className }: ProgressChartProps) => {
+const SocialImpactChart = ({ data, title, description, color, className }: SocialImpactChartProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedData, setAnimatedData] = useState<DataPoint[]>([]);
 
@@ -43,7 +43,7 @@ const ProgressChart = ({ data, title, description, color, className }: ProgressC
         <div className="glass-panel px-4 py-2 rounded-lg">
           <p className="text-sm font-medium">{`${label}`}</p>
           <p className="text-sm font-semibold" style={{ color }}>
-            {`${payload[0].value.toLocaleString()}`}
+            {payload[0].value.toLocaleString()}
           </p>
         </div>
       );
@@ -54,7 +54,7 @@ const ProgressChart = ({ data, title, description, color, className }: ProgressC
   return (
     <div 
       className={cn(
-        "glass-card rounded-xl p-5 transform transition-all duration-700 bg-white shadow-sm border border-gray-100",
+        "glass-card rounded-xl p-5 transform transition-all duration-700",
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
         className
       )}
@@ -100,4 +100,4 @@ const ProgressChart = ({ data, title, description, color, className }: ProgressC
   );
 };
 
-export default ProgressChart;
+export default SocialImpactChart;
